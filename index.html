@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+      }
+
+      /* ---------------------------------Header Styling ---------------------------------*/
+      header.page-header {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .header-items-holder {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .nav-list-item {
+        list-style: none;
+        display: inline;
+        border-right: 1px solid #ccc;
+        padding: 0 10px 0 10px;
+      }
+
+      .nav-list-item:first-child {
+        padding: 0 10px 0 0;
+      }
+
+      .nav-list-item:last-child {
+        border: none;
+        padding: 0 0 0 10px;
+      }
+
+      .nav-list-link {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .nav-list-link:hover {
+        color: #5fbe92;
+      }
+
+      .button-holder {
+        text-align: right;
+      }
+
+      .button-holder button {
+        border: none;
+        padding: 3px 20px;
+        color: #fff;
+        background: #e14f42;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      nav.navigation-bar {
+        padding: 35px 0 0 0;
+      }
+
+      /*---------------------------------------------Banner and Team & Mission Container--------------------------------------------------*/
+      .banner-sub-content-section {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 70px;
+      }
+      .banner-sub-content-holder {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      .banner-image-item {
+        width: 100%;
+        opacity: 0;
+      }
+      .banner-section {
+        position: relative;
+        opacity: 0;
+      }
+
+      .active {
+        animation: slider;
+        animation-duration: 5s;
+      }
+      @keyframes slider {
+        0% {
+          transform: translateX(-300px);
+          opacity: 0;
+        }
+        25% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        75% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(300px);
+          opacity: 0;
+        }
+      }
+      .banner-description {
+        position: absolute;
+        right: 0;
+        top: 60%;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: rgba(255, 255, 255, 0.7);
+        font-style: italic;
+        padding: 30px 150px;
+        line-height: 32px;
+      }
+      .banner-image-container {
+        display: flex;
+      }
+      .team-mission-content-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 70px;
+      }
+      .our-team-section {
+        width: 50%;
+      }
+      .our-mission-section {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .team-heading,
+      .mission-heading {
+        padding-bottom: 20px;
+        color: #5fbe92;
+      }
+      .our-team-holder {
+        display: flex;
+      }
+      .team-image-container {
+        width: 50%;
+      }
+      .team-description-container {
+        width: 50%;
+        padding-left: 30px;
+      }
+      img.team-image-item {
+        width: 100%;
+      }
+      .team-description-item,
+      .mission-description-item {
+        line-height: 25px;
+        padding-bottom: 25px;
+      }
+      button.team-description-learn-btn {
+        padding: 15px 30px;
+        border: none;
+        color: #fff;
+        background-color: #5fbe92;
+      }
+      .mission-description-link {
+        text-decoration: none;
+        color: #5fbe92;
+      }
+      /*-------------------------------------------------- Main Content Styling ---------------------------------------------------*/
+      .main-content-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        padding: 80px 0 40px 0;
+      }
+
+      aside.sidebar-container {
+        width: 20%;
+      }
+
+      .campaigns-section {
+        width: 80%;
+      }
+
+      .news-section {
+        display: flex;
+      }
+
+      .news-section-date-holder {
+        width: 20%;
+      }
+
+      .news-section-description-holder {
+        width: 65%;
+      }
+
+      .sidebar-heading,
+      .campigns-heading {
+        color: #5fbe92;
+        text-transform: capitalize;
+        padding-bottom: 20px;
+      }
+
+      .news-section {
+        padding-bottom: 15px;
+      }
+
+      .data-item {
+        background-color: #5fbe92;
+        text-align: center;
+        color: #fff;
+        padding: 8px 0;
+        margin-bottom: 1px;
+      }
+
+      .month-item {
+        padding-bottom: 16px;
+        background-color: #5fbe92;
+        text-align: center;
+        color: #fff;
+      }
+
+      .news-section-description-holder {
+        padding: 0 0 0 20px;
+      }
+
+      h4.news-section-title {
+        padding-bottom: 10px;
+      }
+
+      .news-section-description {
+        font-size: 14px;
+        color: #959191;
+      }
+
+      .sidebar-testimonial-holder {
+        padding-top: 25px;
+      }
+
+      h3.sidebar-testimonial-title {
+        background-color: #5fbe92;
+        text-align: center;
+        padding: 15px 0;
+        color: #fff;
+        text-transform: capitalize;
+      }
+
+      .sidebar-testimonial-description-holder {
+        padding: 30px 15px;
+        background-color: #ededed;
+        position: relative;
+      }
+
+      img.sidebar-testimonial-quote-image {
+        position: absolute;
+        top: 20px;
+        left: 50px;
+      }
+
+      p.sidebar-testimonial-description {
+        width: 60%;
+        margin: 0 auto;
+        color: #959191;
+        font-style: italic;
+      }
+
+      p.sidebar-testimonial-author-name {
+        text-align: right;
+        text-transform: capitalize;
+        color: #958f8f;
+        font-weight: bold;
+        padding-top: 10px;
+      }
+      .campaigns-section {
+        padding-left: 20px;
+      }
+      .campaigns-image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .campaigns-image-item-holder {
+        padding-bottom: 20px;
+        width: 32%;
+      }
+      .campaigns-image-item {
+        width: 100%;
+        object-fit: contain;
+        border: 10px solid rgba(211, 211, 211, 0.2);
+      }
+      /*----------------------------------Footer Section-------------------------------------------*/
+      .footer-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        background-color: #ededed;
+      }
+      .stay-informed-section {
+        width: 50%;
+        border-right: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+      }
+      .stay-connected-section {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 35px;
+      }
+      .stay-informed-holder {
+        width: 60%;
+      }
+      .stay-informed-heading,
+      .stay-connected-heading {
+        padding: 55px 0 25px 0;
+      }
+      .stay-informed-description,
+      .stay-connected-follow-note {
+        padding-bottom: 20px;
+      }
+      .stay-informed-input {
+        display: block;
+        width: 100%;
+        height: 35px;
+        padding-left: 10px;
+        font-style: italic;
+      }
+      .stay-informed-button-holder {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 25px;
+      }
+      .stay-informed-button {
+        padding: 15px 30px;
+        border: none;
+        color: #fff;
+        background-color: #5fbe92;
+      }
+      .stay-connected-holder {
+        width: 70%;
+      }
+      .stay-connected-social-media-icons-holder {
+        padding-top: 25px;
+      }
+      .stay-connected-social-media-icons {
+        font-size: 40px;
+        color: #5fbe92;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="page-header">
+        <div class="header-items-holder">
+          <div class="logo-container">
+            <a href="/"
+              ><img src="./images/logo.png" alt="logo life social organisation"
+            /></a>
+          </div>
+          <div class="nav-section-container">
+            <div class="button-holder">
+              <button>donate</button>
+            </div>
+            <nav class="navigation-bar">
+              <ul>
+                <li class="nav-list-item">
+                  <a class="nav-list-link" href="">Home</a>
+                </li>
+                <li class="nav-list-item">
+                  <a class="nav-list-link" href="">What We Do</a>
+                </li>
+                <li class="nav-list-item">
+                  <a class="nav-list-link" href="">Media</a>
+                </li>
+                <li class="nav-list-item">
+                  <a class="nav-list-link" href="">Get Envolved</a>
+                </li>
+                <li class="nav-list-item">
+                  <a class="nav-list-link" href="">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="banner-sub-content-section">
+        <div class="banner-sub-content-holder">
+          <div class="banner-section">
+            <div class="banner-image-container">
+              <img class="banner-image-item" alt="" />
+            </div>
+            <p class="banner-description">
+              Our mission is to engage more prople in the fight <br />for better
+              life of needy people
+            </p>
+          </div>
+          <div class="team-mission-content-container">
+            <div class="our-team-section">
+              <h2 class="team-heading">Meet Our Team</h2>
+              <div class="our-team-holder">
+                <div class="team-image-container">
+                  <img
+                    class="team-image-item"
+                    src="./images/page1_img1.jpg"
+                    alt="Team Members"
+                  />
+                </div>
+                <div class="team-description-container">
+                  <p class="team-description-item">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Deleniti, tenetur?
+                  </p>
+                  <p class="team-description-item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aut, eos.
+                  </p>
+                  <button class="team-description-learn-btn">Learn More</button>
+                </div>
+              </div>
+            </div>
+            <div class="our-mission-section">
+              <div class="our-mission-holder">
+                <h2 class="mission-heading">Our Mission</h2>
+                <p class="mission-description-item">
+                  Follow the
+                  <a class="mission-description-link" href="/">link</a> you'll
+                  find all you wanted to know
+                  <br />
+                  about free theme released by TemplateMonster
+                </p>
+                <p class="mission-description-item">
+                  Need more themes of this kind? Find a variety of premium
+                  <br />
+                  <a class="mission-description-link" href="/"
+                    >society & people templates</a
+                  >
+                  at TemplateMonster
+                </p>
+                <button class="team-description-learn-btn">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content-container">
+        <aside class="sidebar-container">
+          <div class="sidebar-holdeer">
+            <h2 class="sidebar-heading">Latest News</h2>
+            <div class="news-section">
+              <div class="news-section-date-holder">
+                <div class="data-item">29</div>
+                <div class="month-item">Jan</div>
+              </div>
+              <div class="news-section-description-holder">
+                <h4 class="news-section-title">Heslfoiefjswoie</h4>
+                <p class="news-section-description">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+            <div class="news-section">
+              <div class="news-section-date-holder">
+                <div class="data-item">29</div>
+                <div class="month-item">Jan</div>
+              </div>
+              <div class="news-section-description-holder">
+                <h4 class="news-section-title">Heslfoiefjswoie</h4>
+                <p class="news-section-description">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+            <div class="news-section">
+              <div class="news-section-date-holder">
+                <div class="data-item">29</div>
+                <div class="month-item">Jan</div>
+              </div>
+              <div class="news-section-description-holder">
+                <h4 class="news-section-title">Heslfoiefjswoie</h4>
+                <p class="news-section-description">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+            <div class="news-section">
+              <div class="news-section-date-holder">
+                <div class="data-item">29</div>
+                <div class="month-item">Jan</div>
+              </div>
+              <div class="news-section-description-holder">
+                <h4 class="news-section-title">Heslfoiefjswoie</h4>
+                <p class="news-section-description">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-testimonial-holder">
+            <h3 class="sidebar-testimonial-title">Testmonial</h3>
+            <div class="sidebar-testimonial-description-holder">
+              <p class="sidebar-testimonial-description">
+                <img
+                  class="sidebar-testimonial-quote-image"
+                  src="./images/quotes.png"
+                  alt="Quotes"
+                />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+                culpa ab aliquam, illo sit reiciendis.
+              </p>
+              <p class="sidebar-testimonial-author-name">sandra wood</p>
+            </div>
+          </div>
+        </aside>
+
+        <div class="campaigns-section">
+          <h2 class="campigns-heading">our campaigns</h2>
+          <div class="campaigns-image-container">
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th1.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th2.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th3.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th4.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th5.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th6.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th7.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th8.jpg" alt="" />
+            </div>
+            <div class="campaigns-image-item-holder">
+              <img class="campaigns-image-item" src="./images/th9.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-container">
+          <div class="stay-informed-section">
+            <div class="stay-informed-holder">
+              <h3 class="stay-informed-heading">Stay Informed</h3>
+              <p class="stay-informed-description">
+                Subscribe to our Newsletter
+              </p>
+              <input
+                type="text"
+                placeholder="Enter your Email"
+                class="stay-informed-input"
+              />
+              <div class="stay-informed-button-holder">
+                <button class="stay-informed-button">Submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="stay-connected-section">
+            <div class="stay-connected-holder">
+              <h3 class="stay-connected-heading">Stay Connected</h3>
+              <p class="stay-connected-follow-note">
+                Follow Us on Social Media Accounts
+              </p>
+              <p class="stay-connected-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consequuntur autem distinctio <br />
+                ab repellendus deserunt sequi.
+              </p>
+              <div class="stay-connected-social-media-icons-holder">
+                <a href="/"
+                  ><i
+                    class="fa-brands fa-twitter-square stay-connected-social-media-icons"
+                  ></i
+                ></a>
+                <a href="/"
+                  ><i
+                    class="fa-brands fa-facebook-square stay-connected-social-media-icons"
+                  ></i
+                ></a>
+                <a href="/"
+                  ><i
+                    class="fa-brands fa-pinterest-square stay-connected-social-media-icons"
+                  ></i
+                ></a>
+                <a href="/"
+                  ><i
+                    class="fa-brands fa-google-plus-square stay-connected-social-media-icons"
+                  ></i
+                ></a>
+                <a href="/"
+                  ><i
+                    class="fa-brands fa-instagram-square stay-connected-social-media-icons"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const img = document.querySelector(".banner-image-item");
+      const slider = document.querySelector(".banner-section");
+      let i = 0;
+      const images = [];
+      images[0] = "./images/slide.jpg";
+      images[1] = "./images/slide1.jpg";
+      images[2] = "./images/slide2.jpg";
+      function changeImage() {
+        slider.classList.add("active");
+        img.classList.add("active");
+        img.src = images[i];
+
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+      }
+
+      setInterval(changeImage, 5000);
+      setInterval(() => {
+        slider.classList.remove("active");
+        img.classList.remove("active");
+      }, 4980);
+      window.onload = changeImage;
+    </script>
+  </body>
+</html>
